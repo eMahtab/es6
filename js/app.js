@@ -44,3 +44,10 @@ var obj={"name":"Mahtab Alam","age":24,display(){console.log("Name is : "+this.n
 
 obj.display();
 
+//ES6  Destructuring Assignments
+
+var {nickname}={name:"Johan Pablo",age:54,country:"Norway",nickname:"Pablo"};
+
+console.log("Nickname = "+nickname)
+
+

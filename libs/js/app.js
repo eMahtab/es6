@@ -53,4 +53,12 @@ var obj = { "name": "Mahtab Alam", "age": 24, display: function display() {
 };
 
 obj.display();
+
+//ES6  Destructuring Assignments
+
+var _name$age$country$nic = { name: "Johan Pablo", age: 54, country: "Norway", nickname: "Pablo" },
+    nickname = _name$age$country$nic.nickname;
+
+
+console.log("Nickname = " + nickname);
 //# sourceMappingURL=app.js.map
