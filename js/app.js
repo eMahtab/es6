@@ -29,3 +29,12 @@ console.log("Result = "+title_heading("cn"));
 
 const PI=3.14;
 console.log("PI = "+PI);
+
+let first_name="Mahtab";
+let last_name="Alam";
+let person={first_name,last_name};
+console.log("Person = "+person);
+
+let loves="tea";
+let person_details={person,loves};
+console.log("Person details = "+person_details);

@@ -37,4 +37,13 @@ console.log("Result = " + title_heading("cn"));
 
 var PI = 3.14;
 console.log("PI = " + PI);
+
+var first_name = "Mahtab";
+var last_name = "Alam";
+var person = { first_name: first_name, last_name: last_name };
+console.log("Person = " + person);
+
+var loves = "tea";
+var person_details = { person: person, loves: loves };
+console.log("Person details = " + person_details);
 //# sourceMappingURL=app.js.map
