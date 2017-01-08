@@ -38,3 +38,9 @@ console.log("Person = "+person);
 let loves="tea";
 let person_details={person,loves};
 console.log("Person details = "+person_details);
+
+
+var obj={"name":"Mahtab Alam","age":24,display(){console.log("Name is : "+this.name)}};
+
+obj.display();
+

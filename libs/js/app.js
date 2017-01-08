@@ -46,4 +46,11 @@ console.log("Person = " + person);
 var loves = "tea";
 var person_details = { person: person, loves: loves };
 console.log("Person details = " + person_details);
+
+var obj = { "name": "Mahtab Alam", "age": 24, display: function display() {
+        console.log("Name is : " + this.name);
+    }
+};
+
+obj.display();
 //# sourceMappingURL=app.js.map
