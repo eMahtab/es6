@@ -2,6 +2,8 @@
 
 var _console;
 
+var _marked = [greet, greet, graph].map(regeneratorRuntime.mark);
+
 var add = function add(a, b) {
     return a + b;
 };
@@ -138,6 +140,7 @@ try {
     // Output:
     // a
     // b
+
 } catch (err) {
     _didIteratorError3 = true;
     _iteratorError3 = err;
@@ -152,4 +155,125 @@ try {
         }
     }
 }
+
+var d = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+        if (false) {
+            resolve('hello world');
+        } else {
+            reject('no bueno');
+        }
+    }, 500);
+});
+
+d.then(function (data) {
+    console.log('success : ', data);
+    return 'foo bar';
+}).then(function (data) {
+    console.log('success 2 : ', data);
+}).catch(function (error) {
+    return console.error('error : ', error);
+});
+
+//ES 6 Generators
+
+function greet() {
+    return regeneratorRuntime.wrap(function greet$(_context) {
+        while (1) {
+            switch (_context.prev = _context.next) {
+                case 0:
+                    console.log("You called 'next()'");
+                    _context.next = 3;
+                    return "hello";
+
+                case 3:
+                case "end":
+                    return _context.stop();
+            }
+        }
+    }, _marked[0], this);
+}
+
+var greeter = greet();
+console.log(greeter);
+var next = greeter.next();
+console.log(next);
+var done = greeter.next();
+console.log(done);
+
+//------------
+function greet() {
+    var friendly;
+    return regeneratorRuntime.wrap(function greet$(_context2) {
+        while (1) {
+            switch (_context2.prev = _context2.next) {
+                case 0:
+                    _context2.next = 2;
+                    return "How";
+
+                case 2:
+                    friendly = _context2.sent;
+                    _context2.next = 5;
+                    return friendly + "are";
+
+                case 5:
+                    friendly = _context2.sent;
+                    _context2.next = 8;
+                    return friendly + "you?";
+
+                case 8:
+                case "end":
+                    return _context2.stop();
+            }
+        }
+    }, _marked[1], this);
+}
+
+var greeter2 = greet();
+console.log(greeter2.next("first").value);
+console.log(greeter2.next(" the heck ").value);
+console.log(greeter2.next(" silly ol'").value);
+
+//-----------
+function graph() {
+    var x, y;
+    return regeneratorRuntime.wrap(function graph$(_context3) {
+        while (1) {
+            switch (_context3.prev = _context3.next) {
+                case 0:
+                    x = 0;
+                    y = 0;
+
+                case 2:
+                    if (!true) {
+                        _context3.next = 9;
+                        break;
+                    }
+
+                    _context3.next = 5;
+                    return { x: x, y: y };
+
+                case 5:
+                    x += 2;
+                    y += 1;
+                    _context3.next = 2;
+                    break;
+
+                case 9:
+                case "end":
+                    return _context3.stop();
+            }
+        }
+    }, _marked[2], this);
+}
+
+var graphGenerator = graph();
+console.log(graphGenerator.next().value);
+console.log(graphGenerator.next().value);
+console.log(graphGenerator.next().value);
+console.log(graphGenerator.next().value);
+console.log(graphGenerator.next().value);
+console.log(graphGenerator.next().value);
+console.log(graphGenerator.next().value);
+console.log(graphGenerator.next().value);
 //# sourceMappingURL=app.js.map
