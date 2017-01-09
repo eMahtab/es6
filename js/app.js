@@ -44,6 +44,7 @@ var obj={"name":"Mahtab Alam","age":24,display(){console.log("Name is : "+this.n
 
 obj.display();
 
+
 //ES6  Destructuring Assignments
 
 var {nickname}={name:"Johan Pablo",age:54,country:"Norway",nickname:"Pablo"};
@@ -51,3 +52,31 @@ var {nickname}={name:"Johan Pablo",age:54,country:"Norway",nickname:"Pablo"};
 console.log("Nickname = "+nickname)
 
 
+// ES6 for of looping over Arrays(Iterables in general)
+
+let list = [8, 3, 11, 9, 6]; 
+for (let value of list) {
+  console.log(value);
+}
+
+for (var char of 'Hello') {
+    console.log(char);
+}
+
+
+// ES6 Array.from method 
+
+const arrayLike = { length: 2, 0: 'a', 1: 'b' };
+
+/*// for-of only works with iterable values
+for (const x of arrayLike) { // TypeError
+    console.log(x);
+}*/
+
+const arr = Array.from(arrayLike);
+for (const x of arr) { // OK, iterable
+    console.log(x);
+}
+// Output:
+// a
+// b
